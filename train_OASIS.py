@@ -1,6 +1,6 @@
 import glob
 import math
-# from torch.utils.tensorboard import SummaryWriter
+
 import os, losses, utils
 import sys
 import json
@@ -19,7 +19,7 @@ import time
 
 
 def same_seeds(seed):
-    # Python built-in random module
+    
     random.seed(seed)
     # Numpy
     np.random.seed(seed)
@@ -52,7 +52,7 @@ def dice(pred1, truth1, dataset_name='OASIS'):
     dices = np.zeros(len(VOI_lbls))
     index = 0
     for k in VOI_lbls:
-        # print(k)
+        
         truth = truth1 == k
         pred = pred1 == k
         intersection = np.sum(pred * truth) * 2.0
@@ -135,7 +135,7 @@ def main():
 
     with open(log_save_dir + 'options.txt', 'w') as f:
         json.dump(opt, f, indent=2)
-    #sys.stdout = Logger(log_save_dir)
+    
 
 
     optimizer = optim.Adam(model.parameters(), lr=lr)
