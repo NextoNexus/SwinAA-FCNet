@@ -6,6 +6,7 @@ import os, losses, utils
 import sys
 import json
 from torch.utils.data import DataLoader
+#导入数据集
 from data import datasets, trans
 import numpy as np
 import torch
